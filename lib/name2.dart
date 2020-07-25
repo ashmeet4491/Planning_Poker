@@ -94,10 +94,7 @@ class _name2State extends State<name2> {
                      onPressed: () async{
                       if(_formkey.currentState.validate())
                       {
-                        Navigator.pushReplacement(context, MaterialPageRoute(
-                            builder: (context)=>home3(),
-                        )
-                        );
+                        Navigator.pushNamed(context, '/home3');
                       }
                       },
 

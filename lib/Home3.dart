@@ -89,10 +89,7 @@ class _home3State extends State<home3> {
                       minWidth: double.infinity,
                       height: 60,
                       onPressed: (){
-                        Navigator.pushReplacement(context, MaterialPageRoute(
-                            builder: (context)=>(Card_poker()),
-                        )
-                        );
+                        Navigator.pushNamed(context, '/cards');
                       }
                       ,
                       color: Colors.yellow,

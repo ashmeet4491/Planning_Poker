@@ -51,7 +51,7 @@ class _onboardingState extends State<onboarding> {
     Container(
     alignment: Alignment.centerRight,
     child: FlatButton(
-    onPressed: () => Navigator.popAndPushNamed(context,'/name2'),
+    onPressed: () => Navigator.pushReplacementNamed(context,'/name2'),
     child: Text(
     'Skip',
     style: TextStyle(
@@ -183,8 +183,8 @@ class _onboardingState extends State<onboarding> {
     ),),
    bottomSheet: _currentPage == _numPages - 1
           ? GestureDetector(
-     onTap: ()=>Navigator.popAndPushNamed(context,'/name2'),
-            child: Container(
+     onTap: ()=>Navigator.pushReplacementNamed(context,'/name2'),
+     child: Container(
      height: SizeConfig.blockSizeVertical * 12,
      width: SizeConfig.blockSizeHorizontal * 100,
         color: Colors.yellow,

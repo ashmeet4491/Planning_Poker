@@ -33,8 +33,14 @@ class hide_card extends StatelessWidget {
                 Icons.home,
                 color: Colors.yellow,
 
+
               ),
               color: Colors.yellow,
+              onPressed: ()
+              {
+                Navigator.of(context).pushNamedAndRemoveUntil('/home3', ModalRoute.withName('/home3'));
+                Navigator.pop(context);
+              },
             ),
           ],
           backgroundColor: Colors.white,

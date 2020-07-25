@@ -37,7 +37,12 @@ class image_screen extends StatelessWidget {
 
               ),
               color: Colors.yellow,
+              onPressed: ()
+              {
+                Navigator.of(context).pushNamedAndRemoveUntil('/home3', ModalRoute.withName('/home3'));
+              },
             ),
+
           ],
 
         ),

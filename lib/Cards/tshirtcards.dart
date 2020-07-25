@@ -44,16 +44,16 @@ class _Card_poker_tshirtState extends State<Card_poker_tshirt> {
       {
         if(retval=="two")
         {
-          Navigator.push(context, MaterialPageRoute(builder: (context) => Card_poker()));
+          Navigator.pushReplacementNamed(context, '/cards');
         }
 
         if(retval=="three")
         {
-          Navigator.push(context, MaterialPageRoute(builder: (context) => Card_poker_standard()));
-        }
+          Navigator.pushReplacementNamed(context, '/card_poker_standard');
+          }
         if(retval=="four")
         {
-          Navigator.push(context, MaterialPageRoute(builder: (context) => Card_poker_tshirt()));
+          Navigator.pushReplacementNamed(context, '/card_poker_standard');
         }
 
       },
@@ -68,97 +68,91 @@ class _Card_poker_tshirtState extends State<Card_poker_tshirt> {
       MaterialApp(
         home: SafeArea(
           child: Scaffold(
-            appBar: AppBar(
-              backgroundColor: Colors.white,
-              actions: [
-                /*IconButton(
-            icon:Icon(
-                    Icons.expand_more,
-                    color: Colors.black,
 
-                  )
-                ),*/
-                popupMenuButton(),
-              ],
-
-            ),
 
             body: Padding(
-              padding: const EdgeInsets.fromLTRB(0.0, 100, 0.0, 0.0),
+              padding: const EdgeInsets.fromLTRB(0.0, 0, 0.0, 10.0),
               child: Column(
 
                 children: [
-
-                  Center(
-                    child: CarouselSlider
-                      (
-                      options: CarouselOptions(
-                        height: SizeConfig.blockSizeVertical * 60,
-                        enlargeCenterPage: true,
+                  Container(
 
 
-                      ),
+                    child:
 
-                      items: colors.map((i){
-                        return Builder(builder: (BuildContext context){return Container(
-                          width:  SizeConfig.blockSizeHorizontal * 70,
-                          margin: EdgeInsets.symmetric(horizontal: 10),
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(25),
-
-                            color: i.color,
+                    popupMenuButton(),
 
 
-                          ),
-
-                          child: CustomPaint(
-                            painter: ColorPainter(),
-                            child: GestureDetector(
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-
-                                  Padding(
-                                    padding: const EdgeInsets.all(8.0),
-                                    child: Text('${i.number}',style: TextStyle(
-                                      fontSize: 50,
-                                      color: Colors.black,
-                                      fontStyle: FontStyle.italic,
-                                    ),),
-                                  ),
-
-                                  SizedBox(height: 60),
-                                  Center(
-                                    child: Text('${i.number}',style: TextStyle(
-                                      fontSize: 150,
-                                      color: Colors.black,
-                                      fontStyle: FontStyle.italic,
-                                    ),),
-                                  ),
-                                ],
-                              ),
-                              onTap: ()
-                              {
-                                Navigator.push<Widget>(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) => wrapper(i),
-                                  ),
-                                );
-                              },
-                            ),
-                          ),
-
-                        );
-                        });
-
-                      }).toList(),
-
-
-
+                    alignment: Alignment.centerRight,
+                  ),
+                  SizedBox(height:SizeConfig.blockSizeVertical * 15 ,),
+                  CarouselSlider
+                    (
+                    options: CarouselOptions(
+                      height: SizeConfig.blockSizeVertical * 60,
+                      enlargeCenterPage: true,
 
 
                     ),
+
+                    items: colors.map((i){
+                      return Builder(builder: (BuildContext context){return Container(
+                        width:  SizeConfig.blockSizeHorizontal * 70,
+                        margin: EdgeInsets.symmetric(horizontal: 10),
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(25),
+
+                          color: i.color,
+
+
+                        ),
+
+                        child: CustomPaint(
+                          painter: ColorPainter(),
+                          child: GestureDetector(
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+
+                                Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Text('${i.number}',style: TextStyle(
+                                    fontSize: 50,
+                                    color: Colors.black,
+                                    fontStyle: FontStyle.italic,
+                                  ),),
+                                ),
+
+                                SizedBox(height: 60),
+                                Center(
+                                  child: Text('${i.number}',style: TextStyle(
+                                    fontSize: 150,
+                                    color: Colors.black,
+                                    fontStyle: FontStyle.italic,
+                                  ),),
+                                ),
+                              ],
+                            ),
+                            onTap: ()
+                            {
+                              Navigator.push<Widget>(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => wrapper(i),
+                                ),
+                              );
+                            },
+                          ),
+                        ),
+
+                      );
+                      });
+
+                    }).toList(),
+
+
+
+
 
                   ),
                   SizedBox(height: 50,),

@@ -62,15 +62,7 @@ class Card_poker2 extends StatelessWidget {
                               ),
                             ],
                           ),
-                          onTap: ()
-                          {
-                            Navigator.push<Widget>(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => wrapper(i),
-                              ),
-                            );
-                          },
+
                         ),
 
                       );

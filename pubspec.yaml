@@ -32,6 +32,7 @@ dependencies:
   pin_input_text_field: ^3.0.2
   carousel_slider: ^2.1.0
   shimmer: ^1.1.1
+  shared_preferences: ^0.5.8
 
 dev_dependencies:
   flutter_test:

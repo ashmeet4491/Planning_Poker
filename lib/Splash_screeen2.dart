@@ -6,6 +6,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:planningpoker2/size.dart';
 import 'package:planningpoker2/screens/Onboarding3.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'package:planningpoker2/name2.dart';
 class splash_screen2 extends StatefulWidget {
   @override
   _splash_screen2State createState() => _splash_screen2State();
@@ -13,6 +15,8 @@ class splash_screen2 extends StatefulWidget {
 
 class _splash_screen2State extends State<splash_screen2> {
   @override
+  bool firstTime;
+  SharedPreferences prefs;
   void initState() {
     // TODO: implement initState
     super.initState();
@@ -20,12 +24,25 @@ class _splash_screen2State extends State<splash_screen2> {
   }
   startTimer() async
   {
+    prefs = await SharedPreferences.getInstance();
+    firstTime = prefs.getBool('first_time');
+
     var duration=Duration(seconds:4);
-    return Timer(duration,route);
+    if (firstTime != null && !firstTime) {// Not first time
+      return new Timer(duration, navigationPageHome);
+    } else {// First time
+      prefs.setBool('first_time', false);
+      return new Timer(duration, navigationPageWel);
+    }
+
   }
-  route()
-  {
-    Navigator.popAndPushNamed(context,'/onboarding3');
+  void navigationPageHome() {
+    Navigator.of(context).pushReplacementNamed('/name2');
+  }
+
+  void navigationPageWel() {
+
+    Navigator.of(context).pushReplacementNamed('/onboarding3');
   }
   Widget build(BuildContext context) {
     SizeConfig().init(context);
