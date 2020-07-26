@@ -43,127 +43,109 @@ class _home3State extends State<home3> {
   @override
   Widget build(BuildContext context) {
     SizeConfig().init(context);
-    return WillPopScope(
-      onWillPop: _OnExitPressed,
-      child: Scaffold(
+    return SafeArea(
+      child: WillPopScope(
+        onWillPop: _OnExitPressed,
+        child: Scaffold(
 
 
-        body: Container(
-          height: SizeConfig.blockSizeVertical*100 ,
-          width: SizeConfig.blockSizeHorizontal*100,
-          padding: EdgeInsets.fromLTRB(SizeConfig.blockSizeHorizontal*10,
-              SizeConfig.blockSizeVertical*10 ,SizeConfig.blockSizeHorizontal*10,SizeConfig.blockSizeVertical*10 ),
-          child: SingleChildScrollView(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Column(
-                  children: [
-                    Text('PokerNeo',style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 30,
-                    ),),
-                    SizedBox(height: SizeConfig.blockSizeVertical*5,),
+          body: Container(
+            height: SizeConfig.blockSizeVertical*100 ,
+            width: SizeConfig.blockSizeHorizontal*100,
+            padding: EdgeInsets.fromLTRB(SizeConfig.blockSizeHorizontal*10,
+                SizeConfig.blockSizeVertical*10 ,SizeConfig.blockSizeHorizontal*10,SizeConfig.blockSizeVertical*5 ),
+            child: SingleChildScrollView(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Column(
+                    children: [
+                      Text('PokerNeo',style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 30,
+                      ),),
+                      SizedBox(height: SizeConfig.blockSizeVertical*5,),
 
-                  ],
-                ),
-
-
-                Container(
-                  height: SizeConfig.blockSizeVertical*30 ,
-                  width: SizeConfig.blockSizeHorizontal*80,
-                  decoration: BoxDecoration(
-
-                      image: DecorationImage(
-
-                        image: AssetImage('assets/images/onboarding1.png'),
-                      )
+                    ],
                   ),
-                ),
-                SizedBox(height: SizeConfig.blockSizeVertical*5,),
-                Column(
-                  children: [
 
 
-                    MaterialButton(
-                      minWidth: double.infinity,
-                      height: 60,
-                      onPressed: (){
-                        Navigator.pushNamed(context, '/cards');
-                      }
-                      ,
-                      color: Colors.yellow,
-                      shape: RoundedRectangleBorder(
-                        side: BorderSide(
-                          color: Colors.black,
-                        ),
+                  Container(
+                    height: SizeConfig.blockSizeVertical*35 ,
+                    width: SizeConfig.blockSizeHorizontal*80,
+                    decoration: BoxDecoration(
 
-                        borderRadius: BorderRadius.circular(50),
-                      ),
-                      child: Text('Show Cards',style: TextStyle(
-                        fontWeight: FontWeight.w600,
-                        fontSize: 18,
+                        image: DecorationImage(
 
-                      ),),
+                          image: AssetImage('assets/images/onboarding1.png'),
+                        )
                     ),
-                    SizedBox(height: 20,),
-                    MaterialButton(
-                      minWidth: double.infinity,
-                      height: 60,
-                      onPressed: (){
+                  ),
+                  SizedBox(height: SizeConfig.blockSizeVertical*8,),
+                  Column(
+                    children: [
 
-                      }
-                      ,
-                      color: Colors.yellow,
-                      shape: RoundedRectangleBorder(
-                        side: BorderSide(
-                          color: Colors.black,
+
+                      MaterialButton(
+                        minWidth: double.infinity,
+                        height: 60,
+                        onPressed: (){
+                          Navigator.pushNamed(context, '/cards');
+                        }
+                        ,
+                        color: Colors.yellow,
+                        shape: RoundedRectangleBorder(
+                          side: BorderSide(
+                            color: Colors.black,
+                          ),
+
+                          borderRadius: BorderRadius.circular(50),
                         ),
-                        borderRadius: BorderRadius.circular(50),
+                        child: Text('Show Cards',style: TextStyle(
+                          fontWeight: FontWeight.w600,
+                          fontSize: 18,
+
+                        ),),
                       ),
-                      child: Text('Help',style: TextStyle(
-                        fontWeight: FontWeight.w600,
-                        fontSize: 18,
+                      SizedBox(height: 20,),
 
-                      ),),
-                    ),
-                    SizedBox(height: 20,),
-                    MaterialButton(
-                      minWidth: double.infinity,
-                      height: 60,
-                      onPressed: (){
-                        _OnExitPressed();
+                      MaterialButton(
+                        minWidth: double.infinity,
+                        height: 60,
+                        onPressed: (){
+                          _OnExitPressed();
 
 
 
 
 
-                      }
+                        }
 
-                      ,
+                        ,
 
-                      color: Colors.yellow,
-                      shape: RoundedRectangleBorder(
-                        side: BorderSide(
-                          color: Colors.black,
+                        color: Colors.yellow,
+                        shape: RoundedRectangleBorder(
+                          side: BorderSide(
+                            color: Colors.black,
+                          ),
+
+                          borderRadius: BorderRadius.circular(50),
                         ),
+                        child: Text('Exit',style: TextStyle(
+                          fontWeight: FontWeight.w600,
+                          fontSize: 18,
 
-                        borderRadius: BorderRadius.circular(50),
-                      ),
-                      child: Text('Exit',style: TextStyle(
-                        fontWeight: FontWeight.w600,
-                        fontSize: 18,
+                        ),),
+                      )
+                    ],
 
-                      ),),
-                    )
-                  ],
-
-                )
-              ],
+                  )
+                ],
+              ),
             ),
+
+
           ),
-
-
         ),
       ),
     );

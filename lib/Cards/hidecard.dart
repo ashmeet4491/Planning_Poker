@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'Colors.dart';
 import 'package:planningpoker2/Cards/card.dart';
+import 'package:planningpoker2/size.dart';
 
 class hide_card extends StatelessWidget {
   final color_number color;
@@ -11,6 +12,7 @@ class hide_card extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    SizeConfig().init(context);
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
@@ -28,25 +30,12 @@ class hide_card extends StatelessWidget {
            //   shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(300.0))),
 
             ),
-            IconButton(
-              icon: Icon(
-                Icons.home,
-                color: Colors.yellow,
 
-
-              ),
-              color: Colors.yellow,
-              onPressed: ()
-              {
-                Navigator.of(context).pushNamedAndRemoveUntil('/home3', ModalRoute.withName('/home3'));
-                Navigator.pop(context);
-              },
-            ),
           ],
           backgroundColor: Colors.white,
         ),
         body: Padding(
-          padding: const EdgeInsets.fromLTRB(30.0, 30.0, 30.0, 10.0),
+          padding: const EdgeInsets.fromLTRB(70.0, 70.0, 70.0, 70.0),
           child:Column(
             children: [
               Expanded(
@@ -54,8 +43,8 @@ class hide_card extends StatelessWidget {
                 child: CustomPaint(
                   painter: ColorPainter(),
                   child: Container(
-                   width:400,
-                    height:150,
+                   width:SizeConfig.blockSizeHorizontal*70,
+                    height:SizeConfig.blockSizeVertical* 70,
 
 
 

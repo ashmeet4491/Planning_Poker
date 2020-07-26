@@ -14,10 +14,10 @@ class _name2State extends State<name2> {
 
   Widget build(BuildContext context) {
     SizeConfig().init(context);
-    return Scaffold(
+    return SafeArea(
+      child: Scaffold(
 
-      body: SafeArea(
-        child:Container(
+        body: Container(
           height: SizeConfig.blockSizeVertical * 100,
           width: SizeConfig.blockSizeHorizontal * 100,
 
@@ -90,7 +90,7 @@ class _name2State extends State<name2> {
                     SizedBox(height: 20,),
                     MaterialButton(
                       minWidth: double.infinity,
-                      height: SizeConfig.blockSizeVertical*10,
+                      height: SizeConfig.blockSizeVertical*8,
                      onPressed: () async{
                       if(_formkey.currentState.validate())
                       {
@@ -119,7 +119,6 @@ class _name2State extends State<name2> {
 
 
         ),
-
       ),
     );
   }

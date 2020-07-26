@@ -15,63 +15,74 @@ class Card_poker_tshirt extends StatefulWidget {
 class _Card_poker_tshirtState extends State<Card_poker_tshirt> {
   Widget popupMenuButton()
   {
-    return PopupMenuButton<String>(
-      icon:Icon(
-        Icons.expand_more,
-        color: Colors.black,
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.end,
+      children: [
+        Text('Cards'
+          ,style: TextStyle(
+            fontSize: SizeConfig.blockSizeHorizontal*5,
+            color: Colors.black,
+          ),),
+        PopupMenuButton<String>(
+          icon:Icon(
+            Icons.expand_more,
+            color: Colors.black,
+            size: SizeConfig.blockSizeHorizontal*7,
 
-      ),
-      itemBuilder: (BuildContext context)=><PopupMenuEntry<String>>[
-        PopupMenuItem<String>(
-          value: "one",
-          child: Text('Select'),
-        ),
-        PopupMenuItem<String>(
-          value: "two",
-          child: Text('Fabonacci'),
-        ),
-        PopupMenuItem<String>(
-          value: "three",
-          child: Text('Standard'),
-        ),
-        PopupMenuItem<String>(
-          value: "four",
-          child: Text('Tshirt'),
-        ),
+          ),
+          itemBuilder: (BuildContext context)=><PopupMenuEntry<String>>[
+            PopupMenuItem<String>(
+              value: "one",
+              child: Text('Select'),
+            ),
+            PopupMenuItem<String>(
+              value: "two",
+              child: Text('Fibonacci'),
+            ),
+            PopupMenuItem<String>(
+              value: "three",
+              child: Text('Standard'),
+            ),
+            PopupMenuItem<String>(
+              value: "four",
+              child: Text('Tshirt'),
+            ),
 
+          ],
+          onSelected: (retval)
+          {
+            if(retval=="two")
+            {
+              Navigator.pushReplacementNamed(context, '/cards');
+            }
+
+            if(retval=="three")
+            {
+              Navigator.pushReplacementNamed(context, '/card_poker_standard');
+            }
+            if(retval=="four")
+            {
+              Navigator.pushReplacementNamed(context, '/card_poker_tshirt');
+            }
+
+          },
+
+
+        ),
       ],
-      onSelected: (retval)
-      {
-        if(retval=="two")
-        {
-          Navigator.pushReplacementNamed(context, '/cards');
-        }
-
-        if(retval=="three")
-        {
-          Navigator.pushReplacementNamed(context, '/card_poker_standard');
-          }
-        if(retval=="four")
-        {
-          Navigator.pushReplacementNamed(context, '/card_poker_standard');
-        }
-
-      },
-
-
     );
-
   }
   @override
   Widget build(BuildContext context) {
     return
       MaterialApp(
+        debugShowCheckedModeBanner: false,
         home: SafeArea(
           child: Scaffold(
 
 
             body: Padding(
-              padding: const EdgeInsets.fromLTRB(0.0, 0, 0.0, 10.0),
+              padding: const EdgeInsets.fromLTRB(2.0, 5.0, 2.0, 10.0),
               child: Column(
 
                 children: [
@@ -85,7 +96,14 @@ class _Card_poker_tshirtState extends State<Card_poker_tshirt> {
 
                     alignment: Alignment.centerRight,
                   ),
-                  SizedBox(height:SizeConfig.blockSizeVertical * 15 ,),
+                  SizedBox(height:SizeConfig.blockSizeVertical * 7,),
+                  Text('TShirt Cards',style: TextStyle(
+                    fontSize: SizeConfig.blockSizeHorizontal*6,
+                    color: Colors.black,
+
+
+                  ),),
+                  SizedBox(height:SizeConfig.blockSizeVertical * 6 ,),
                   CarouselSlider
                     (
                     options: CarouselOptions(
@@ -96,55 +114,60 @@ class _Card_poker_tshirtState extends State<Card_poker_tshirt> {
                     ),
 
                     items: colors.map((i){
-                      return Builder(builder: (BuildContext context){return Container(
-                        width:  SizeConfig.blockSizeHorizontal * 70,
-                        margin: EdgeInsets.symmetric(horizontal: 10),
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(25),
+                      return Builder(builder: (BuildContext context){return GestureDetector(
 
-                          color: i.color,
+                        child: Container(
+                          width:  SizeConfig.blockSizeHorizontal * 70,
+                          margin: EdgeInsets.symmetric(horizontal: SizeConfig.blockSizeHorizontal * 5),
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(25),
+
+                            color: i.color,
 
 
-                        ),
-
-                        child: CustomPaint(
-                          painter: ColorPainter(),
-                          child: GestureDetector(
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-
-                                Padding(
-                                  padding: const EdgeInsets.all(8.0),
-                                  child: Text('${i.number}',style: TextStyle(
-                                    fontSize: 50,
-                                    color: Colors.black,
-                                    fontStyle: FontStyle.italic,
-                                  ),),
-                                ),
-
-                                SizedBox(height: 60),
-                                Center(
-                                  child: Text('${i.number}',style: TextStyle(
-                                    fontSize: 150,
-                                    color: Colors.black,
-                                    fontStyle: FontStyle.italic,
-                                  ),),
-                                ),
-                              ],
-                            ),
-                            onTap: ()
-                            {
-                              Navigator.push<Widget>(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => wrapper(i),
-                                ),
-                              );
-                            },
                           ),
-                        ),
 
+                          child: CustomPaint(
+                            painter: ColorPainter(),
+
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                children: [
+
+                                  Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: Text('${i.number}',style: TextStyle(
+                                      fontSize: SizeConfig.safeBlockHorizontal * 10,
+                                      color: Colors.black,
+                                      fontStyle: FontStyle.italic,
+                                    ),),
+                                  ),
+
+                                  SizedBox(height: 60),
+                                  Center(
+                                    child: Text('${i.number}',style: TextStyle(
+                                      fontSize: SizeConfig.safeBlockHorizontal * 30,
+                                      color: Colors.black,
+                                      fontStyle: FontStyle.italic,
+                                    ),),
+                                  ),
+                                ],
+                              ),
+
+
+                          ),
+
+                        ),
+                        onTap: ()
+                        {
+                          Navigator.push<Widget>(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => wrapper(i),
+                            ),
+                          );
+                        },
                       );
                       });
 

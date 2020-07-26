@@ -46,44 +46,46 @@ class _splash_screen2State extends State<splash_screen2> {
   }
   Widget build(BuildContext context) {
     SizeConfig().init(context);
-    return Container(
-      height: SizeConfig.blockSizeVertical * 100,
-      width: SizeConfig.blockSizeHorizontal * 100,
-      child: Scaffold(
-        backgroundColor:Colors.white,
-        body:CustomPaint(
-          painter: YellowPainter(),
-          child: Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Container(
-                //  height:  SizeConfig.blockSizeVertical * 40,
-                  //width:   SizeConfig.blockSizeHorizontal * 40,
-                  child: CircleAvatar(
-                    backgroundColor: Colors.black,
-
-                    radius: SizeConfig.blockSizeHorizontal * 20,
-
-
+    return SafeArea(
+      child: Container(
+        height: SizeConfig.blockSizeVertical * 100,
+        width: SizeConfig.blockSizeHorizontal * 100,
+        child: Scaffold(
+          backgroundColor:Colors.white,
+          body:CustomPaint(
+            painter: YellowPainter(),
+            child: Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Container(
+                  //  height:  SizeConfig.blockSizeVertical * 40,
+                    //width:   SizeConfig.blockSizeHorizontal * 40,
                     child: CircleAvatar(
-                      backgroundColor: Colors.yellow,
-                      radius: SizeConfig.blockSizeHorizontal * 15,
+                      backgroundColor: Colors.black,
+
+                      radius: SizeConfig.blockSizeHorizontal * 20,
+
+
+                      child: CircleAvatar(
+                        backgroundColor: Colors.yellow,
+                        radius: SizeConfig.blockSizeHorizontal * 15,
+                      ),
                     ),
+
                   ),
+                  SizedBox(height:SizeConfig.blockSizeVertical * 14),
+                  Text('PokerNeo',
+                  style: TextStyle(
+                    color: Colors.black,
+                      fontSize: SizeConfig.safeBlockHorizontal * 8,
+                    fontWeight: FontWeight.bold,
+                    letterSpacing: 2,
+                  ),)
+                ],
+              ),
 
-                ),
-                SizedBox(height:SizeConfig.blockSizeVertical * 14),
-                Text('PokerNeo',
-                style: TextStyle(
-                  color: Colors.black,
-                    fontSize: SizeConfig.safeBlockHorizontal * 8,
-                  fontWeight: FontWeight.bold,
-                  letterSpacing: 2,
-                ),)
-              ],
             ),
-
           ),
         ),
       ),
