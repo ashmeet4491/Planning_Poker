@@ -38,7 +38,7 @@ class _Card_pokerState extends State<Card_poker> {
             ),
             PopupMenuItem<String>(
               value: "two",
-              child: Text('Fabonacci'),
+              child: Text('Fibonacci'),
             ),
             PopupMenuItem<String>(
               value: "three",
