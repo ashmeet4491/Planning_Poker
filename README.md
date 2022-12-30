@@ -1,5 +1,4 @@
 ![Planningpoker2](https://user-images.githubusercontent.com/33839706/210060250-e99a5b67-2883-49f6-80c0-3008ef4b5eba.PNG)
-
 ![Planningpoker3](https://user-images.githubusercontent.com/33839706/210060254-9cd0106b-cbbe-4452-8920-ee0262776f9a.PNG)
 ![PlanningPoker5](https://user-images.githubusercontent.com/33839706/210060265-3f7c267a-8552-4503-8d26-6522407f63db.PNG)
 ![Planningpoker5](https://user-images.githubusercontent.com/33839706/210060260-02f005e8-30b3-4443-bc9e-e30b8a54aeec.PNG)
