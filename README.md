@@ -1,5 +1,5 @@
 This App is used for the estimation of a particular task within the team with the help of Card.I have implemented three kinds of Cards here (Standard, Fibonac◦ Designing of Planning Poker App: Responsible for Creating a prototype of the application using tool AdobeXd
-This App is used for the estimation of a particular task within the team with the help of Card.I have implemented three kinds of Cards here (Standard, Fibonacci and Tshirt).Also, Implemented a Hide and Show feature.
+This App is used for the estimation of a particular task within the team with the help of Card.I have implemented three kinds of Cards here (Standard, Fibonacci and Tshirt).
 
 
 
